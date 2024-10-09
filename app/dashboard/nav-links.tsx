@@ -3,20 +3,18 @@
 import {
     UserGroupIcon,
     HomeIcon,
-    DocumentDuplicateIcon,
+    InboxIcon,
 } from '@heroicons/react/24/outline';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import clsx from 'clsx';
 
-// ...
-
 export default function NavLinks() {
     const pathname = usePathname();
     return (
         <>
-            {/*{links.map((link) => {*/}
-                // const LinkIcon = link.icon;
+            {links.map((link) => {
+                const LinkIcon = link.icon;
                 return (
                     <Link
                         key={link.name}
@@ -28,10 +26,11 @@ export default function NavLinks() {
                             },
                         )}
                     >
-                        {/*<LinkIcon className="w-6" />*/}
+                        <LinkIcon />
                         <p className="hidden md:block">{link.name}</p>
                     </Link>
                 );
+            })}
         </>
     );
 }
