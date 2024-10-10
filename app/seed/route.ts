@@ -2,11 +2,6 @@ import bcrypt from 'bcrypt';
 import { db } from '@vercel/postgres';
 import { invoices, customers, revenue, users } from '../lib/placeholder-data';
 
-import { sql } from '@vercel/postgres';
-
-const likes = 100;
-const { rows, fields } =
-    await sql`SELECT * FROM posts WHERE likes > ${likes} LIMIT 5;`;
 
 const client = await db.connect();
 
